@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "demo.js",
+  "scripts": {
+    "serve": "ws"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "local-web-server": "^2.2.4"
+  },
+  "dependencies": {
+    "lit-html-element": "^0.6.10"
+  }
+}
