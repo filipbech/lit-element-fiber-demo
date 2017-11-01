@@ -62,4 +62,4 @@ export class FiberDot extends LitElement {
   }
 }
 
-customElements.define('fiber-dot', FiberDot);
+customElements.define('fiber-dot', FiberDot.withProperties());

@@ -15,8 +15,8 @@ export class FiberTriangle extends LitElement{
             y: {
                 type: Number
             },
-            seconds:{
-                type:Number
+            seconds: {
+                type: Number
             }
         }
     }
@@ -46,9 +46,9 @@ export class FiberTriangle extends LitElement{
     return html`
       <fiber-triangle x="${this.x}" y="${this.y - (s / 2)}" s="${s}" seconds="${this.seconds}"></fiber-triangle>
       <fiber-triangle x="${this.x - s}" y="${this.y + (s / 2)}" s="${s}" seconds="${this.seconds}"></fiber-triangle>
-      <fiber-triangle x=${ this.x + s}" y="${this.y + (s / 2)}" s="${s}" seconds="${this.seconds}"></fiber-triangle>
+      <fiber-triangle x="${ this.x + s}" y="${this.y + (s / 2)}" s="${s}" seconds="${this.seconds}"></fiber-triangle>
     `;
   }
 }
 
-customElements.define('fiber-triangle', FiberTriangle);
+customElements.define('fiber-triangle', FiberTriangle.withProperties());

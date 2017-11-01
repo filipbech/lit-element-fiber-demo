@@ -46,4 +46,4 @@ export class FiberDemo extends LitElement {
   }
 }
 
-customElements.define('fiber-demo', FiberDemo);
+customElements.define('fiber-demo', FiberDemo.withProperties());
