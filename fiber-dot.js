@@ -1,24 +1,26 @@
 import { LitElement, html } from './node_modules/lit-html-element/lit-element.js';
+import { render } from './node_modules/lit-html/lib/lit-extended.js';
+
 
 export class FiberDot extends LitElement {
 
     static get properties() {
         return {
             size: {
-                type:Number
+                type: Number
             },
             x: {
-                type:Number
+                type: Number
             },
             y: {
-                type:Number
+                type: Number
             },
             text: {
-                type:String
+                type: String
             },
             hover: {
-                type:Boolean,
-                value:false
+                type: Boolean,
+                value: false
             }
         }
     }
@@ -43,7 +45,7 @@ export class FiberDot extends LitElement {
     const s = this.size * 1.3;
     return html`
         <style>
-            :host {
+        :host {
                 position: absolute;
                 font: normal 15px sans-serif;
                 text-align: center;
@@ -58,7 +60,7 @@ export class FiberDot extends LitElement {
             }
         </style>
         ${this.hover ? '**' + this.text + '**' : this.text}
-    `
+    `;
   }
 }
 
