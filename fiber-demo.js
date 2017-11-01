@@ -1,11 +1,13 @@
 import { LitElement, html } from './node_modules/lit-html-element/lit-element.js';
 
-import { render } from './node_modules/lit-html/lit-html.js';
-
 export class FiberDemo extends LitElement {
     static get properties() {
         return {
             elapsed: {
+                type: Number,
+                value: 0
+            },
+            seconds: {
                 type: Number,
                 value: 0
             }
@@ -24,7 +26,7 @@ export class FiberDemo extends LitElement {
   }
 
   render() {
-      const t = (this.elapsed / 1000) % 10;
+      const t = (this.elapsed / 1000) % 10;      
       const scale = 1 + (t > 5 ? 10 - t : t) / 10;
       return html`
         <style>
