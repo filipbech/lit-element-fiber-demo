@@ -42,8 +42,14 @@ export class FiberDot extends LitElement {
   }
 
   render() {
+    if (this.cachedTemplate && this.oldHover === this.hover && this.oldText === this.text) {
+        return this.cachedTemplate;
+    }
+    this.oldHover = this.hover;
+    this.oldText = this.text;
+    
     const s = this.size * 1.3;
-    return html`
+    this.cachedTemplate = html`
         <style>
         :host {
                 position: absolute;
@@ -61,6 +67,7 @@ export class FiberDot extends LitElement {
         </style>
         ${this.hover ? '**' + this.text + '**' : this.text}
     `;
+    return this.cachedTemplate;
   }
 }
 
