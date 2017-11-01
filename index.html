@@ -59,7 +59,7 @@
         Promise.all([
             customElements.whenDefined('fiber-demo'),
             customElements.whenDefined('fiber-triangle'),
-            customElements.whenDefined('fiber-dog')
+            customElements.whenDefined('fiber-dot')
         ]).then(_ => {
             requestAnimationFrame(update);
         });
