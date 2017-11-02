@@ -35,7 +35,7 @@ export class FiberTriangle extends LitElement {
     }
     s = s / 2;
 
-    const slowDown = false;
+    const slowDown = true;
     if (slowDown) {
       const e = performance.now() + 0.8;
       while (performance.now() < e) {
