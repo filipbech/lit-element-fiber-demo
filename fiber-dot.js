@@ -31,6 +31,14 @@ export class FiberDot extends LitElement {
         this.leave = this.leave.bind(this);
         this.addEventListener('mouseenter', this.enter);
         this.addEventListener('mouseleave', this.leave);
+
+        const s = this.size * 1.3;
+        this.style.width = `${s}px`;
+        this.style.height = `${s}px`;
+        this.style.left = `${this.x}px`;
+        this.style.top = `${this.y}px`;
+        this.style.borderRadius = `${s / 2}px`;
+        this.style.lineHeight = `${s}px`;
     }
 
   enter() {
@@ -45,26 +53,11 @@ export class FiberDot extends LitElement {
     if (this.cachedTemplate && this.oldHover === this.hover && this.oldText === this.text) {
         return this.cachedTemplate;
     }
-    this.oldHover = this.hover;
+
+    this.style.background = `${this.hover ? '#ff0' : '#61dafb'}`;   
     this.oldText = this.text;
-    
-    const s = this.size * 1.3;
+
     this.cachedTemplate = html`
-        <style>
-        :host {
-                position: absolute;
-                font: normal 15px sans-serif;
-                text-align: center;
-                cursor: pointer;
-                width: ${s}px;
-                height: ${s}px;
-                left: ${this.x}px;
-                top: ${this.y}px;
-                border-radius: ${s / 2}px;
-                line-height: ${s}px;
-                background: ${this.hover ? '#ff0' : '#61dafb'};
-            }
-        </style>
         ${this.hover ? '**' + this.text + '**' : this.text}
     `;
     return this.cachedTemplate;

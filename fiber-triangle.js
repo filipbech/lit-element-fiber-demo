@@ -25,6 +25,7 @@ export class FiberTriangle extends LitElement {
     let s = this.s;
     if (s <= targetSize) {
       return html`
+        <link rel="stylesheet" href="style.css">
         <fiber-dot
             x="${this.x - (targetSize / 2)}"
             y="${this.y - (targetSize / 2)}"
@@ -35,7 +36,7 @@ export class FiberTriangle extends LitElement {
     }
     s = s / 2;
 
-    const slowDown = false;
+    const slowDown = true;
     if (slowDown) {
       const e = performance.now() + 0.8;
       while (performance.now() < e) {
@@ -43,6 +44,7 @@ export class FiberTriangle extends LitElement {
       }
     }
     return html`
+      <link rel="stylesheet" href="style.css">
       <fiber-triangle x="${this.x}" y="${this.y - (s / 2)}" s="${s}" seconds="${this.seconds}"></fiber-triangle>
       <fiber-triangle x="${this.x - s}" y="${this.y + (s / 2)}" s="${s}" seconds="${this.seconds}"></fiber-triangle>
       <fiber-triangle x="${this.x + s}" y="${this.y + (s / 2)}" s="${s}" seconds="${this.seconds}"></fiber-triangle>
