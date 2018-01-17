@@ -17,8 +17,8 @@
     <script src="fiber-demo.js" type="module"></script>
 
     <script type="text/javascript">
-        var start = Date.now();
-        var baseEl = document.querySelector('fiber-demo');
+        const start = Date.now();
+        const baseEl = document.querySelector('fiber-demo');
 
         function update() {
             baseEl.elapsed = Date.now() - start;
@@ -33,6 +33,6 @@
             requestAnimationFrame(update);
         });
     </script>
-
 </body>
+
 </html>
