@@ -12,6 +12,6 @@
     "local-web-server": "^2.2.4"
   },
   "dependencies": {
-    "lit-html-element": "^0.6.10"
+    "lit-html-element": "^0.7.6"
   }
 }
